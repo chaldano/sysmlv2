@@ -1,5 +1,5 @@
 
-package 'definitions-firmware-services'{
+package 'definitions-services'{
   private import ScalarValues::*; 
   private import 'foundations-identity'::*; 
   private import 'communication-protocols'::*;
