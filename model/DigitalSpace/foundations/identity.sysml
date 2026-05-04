@@ -1,5 +1,5 @@
 
-package 'foundations-identity'{
+package foundations_identity {
   private import ScalarValues::*;
  
   item def Identifier {

@@ -1,14 +1,14 @@
 
-package 'definitions-os' {
+package 'Generic-OS-Systems' {
   private import ScalarValues::*; 
- // import StandardLibrary::*; 
-  private import 'foundations-identity'::*;
+  private import 'foundations_identity'::*;
+ 
   item def OSFamily; 
   item def Linux specializes OSFamily; 
   item def Windows specializes OSFamily; 
   item def RTOS specializes OSFamily;
   
-  item def OperatingSystem specializes IdentifiedEntity { 
+  abstract item def OS_System specializes IdentifiedEntity { 
     attribute name: String; 
     attribute version: String; 
     attribute family: OSFamily; }

@@ -1,7 +1,7 @@
 
 package 'definitions-firmware' {
   private import ScalarValues::*;
-  private import 'foundations-identity'::*;
+  private import 'foundations_identity'::*;
   private import 'foundations-datetype'::*;
 
   item def Firmware specializes IdentifiedEntity { 

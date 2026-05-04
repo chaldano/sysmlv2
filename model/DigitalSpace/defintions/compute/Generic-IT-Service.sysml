@@ -1,7 +1,7 @@
 
 package 'definitions-services'{
   private import ScalarValues::*; 
-  private import 'foundations-identity'::*; 
+  private import 'foundations_identity'::*; 
   private import 'communication-protocols'::*;
   private import 'communication-endpoint'::*;
   

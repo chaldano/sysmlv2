@@ -1,7 +1,5 @@
-package 'usage-nodes'{
+package Usage-Nodes{
   private import ScalarValues::*; 
-  private import 'structure-nodes'::*; 
-  private import 'definitions-os'::*; 
   
  part mySystem {
    part ComputeNode: Node {
