@@ -4,6 +4,7 @@ package foundations_identity {
  
   item def Identifier {
     attribute value: String[1]; }
+ 
   item def IdentifiedEntity {
-    attribute id: Identifier; }
+  id: Identifier; }
   }
