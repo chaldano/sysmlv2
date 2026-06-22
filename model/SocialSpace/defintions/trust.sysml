@@ -1,5 +1,5 @@
-package organization::trust {
-  import StandardLibrary::*;
+package trust {
+private import ScalarFunctions::*;
 
   item def Trust {
     attribute description: String;

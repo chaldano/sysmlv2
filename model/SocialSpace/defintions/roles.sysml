@@ -1,6 +1,6 @@
-package organization::roles {
-  import StandardLibrary::*;
-  import organization::definitions::*;
+package roles {
+private import ScalarFunctions::*;
+private import organization_definitions::*;
 
   part def RoleAssignment {
     part role: Role;

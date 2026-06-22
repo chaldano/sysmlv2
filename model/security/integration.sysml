@@ -1,7 +1,7 @@
-package security::integration {
-  import StandardLibrary::*;
-  import security::definitions::*;
-  import compute::*;
+package integration {
+  private import ScalarValues::*;
+  private import security_controls::*;
+  //* import compute::*;
   import communication::*;
   import automation::*;
   import organization::*;
@@ -10,5 +10,5 @@ package security::integration {
   trace Security -> compute::structure::ComputeNode;
   trace Security -> communication::definitions::Communication;
   trace Security -> automation::robotics::Robot;
-  trace Security -> ai::definitions::AIModel;
+  trace Security -> ai::definitions::AIModel; */
 }

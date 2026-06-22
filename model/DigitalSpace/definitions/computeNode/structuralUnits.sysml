@@ -24,6 +24,13 @@ package structuralUnits {
     }   
     // Exmaple od NodeUnit of ComputeNode type
 
+    item def ProtocolData;
+
+    part def netport {
+        in response: ProtocolData;
+        out request: ProtocolData;
+    }
+
     part def OSUnit specializes NodeUnit {
     attribute type : OSFamily redefines type; // The family of the operating system (e.g., Linux, Windows, RTOS)
     }
@@ -41,6 +48,7 @@ package structuralUnits {
     }   
     part def NetworkController  specializes NodeUnit {             
        attribute type : String redefines type; // The type of network interface (e.g., Ethernet, Wi-Fi)
+       nicport:netport;
     }
     part def SerialController specializes NodeUnit {   
     attribute type : String redefines type; // The type of serial interface (e.g., UART, SPI)

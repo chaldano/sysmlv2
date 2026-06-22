@@ -1,5 +1,5 @@
-package organization::compliance {
-
+package compliance {
+private import ScalarFunctions::*;
   item def Regulation {
     attribute name: String;
     attribute source: String;
@@ -11,5 +11,5 @@ package organization::compliance {
     attribute text: String;
   }
 
-  trace ComplianceRequirement -> Regulation;
+ // trace ComplianceRequirement -> Regulation;
 }

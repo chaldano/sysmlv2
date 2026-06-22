@@ -1,9 +1,9 @@
-package 'cryp-functions' {
+package cryp_functions {
   item def Security;
   item def Credential;
   item def Identity;
 
-    action def Encrypt {
+  //*   action def Encrypt {
         in  plain  : ByteStream;
         in  key    : KeyMaterial;
         out cipher : ByteStream;
@@ -17,5 +17,5 @@ package 'cryp-functions' {
 
     action def Random {
         out randomValue : ByteStream;
-    }
+    } */
 }

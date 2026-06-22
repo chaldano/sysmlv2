@@ -1,4 +1,4 @@
-package 'organization-definitions' {
+package organization_definitions {
   private import ScalarValues::*; 
   item def Person {
     attribute name: String;

@@ -1,32 +1,37 @@
-package capabilities;
+package capabilities {
   private import ScalarValues::*; 
   private import 'foundations_identity'::*; 
-  private import 'organization-definitions'::*;
-  private import 'coupling'::*;
-  abstract action def Function;
+  private import 'foundations_datetype'::*; 
+  private import FunctionModel::*;
+ 
 
-  abstract part def Capability specializes IdentifiedEntity {
+  port def inputs {
+    in input: DataFlow[1..*]  ;
+  }
+  port def output {
+    out output: DataFlow[1]  ;
+  }
+
+ abstract part def Capability specializes IdentifiedEntity {
     attribute description: String;
-    ref behavior: Function;
-    port access;
-  }
+    in input : DataFlow[0..*]; // Input data flow to the function
+    out output : DataFlow[1]; // Output data flow from the function  
+  
+    // internal functionality of the capability, represented as a behavior
+    part functions : Function[1..*];
+    
+    //port output: DataFlow;
+    constraint {
+      output = functions.result;  
+      }
+    }
+    
+    part def ComputeCapability{
+      part function : ComputeFunction;
 
-  part def PhysicalCapability specializes Capability {
-  attribute physicalInterface: String; // Description of the physical interface
-  port physicalPort: CouplingPort; // Port for coupling with other nodes or components
-  }
-
-  part def NetworkCapability specializes Capability {
-  attribute networkInterface: String; // Description of the network interface
-  port networkPort: CouplingPort; // Port for coupling with other nodes or components
-  }
-
-  part def ServiceCapability specializes Capability {
-  attribute serviceInterface: String; // Description of the network interface
-  port servicePort: CouplingPort; // Port for coupling with other nodes or components
-  }
-
-  part def ApplicationCapability specializes Capability {
-  attribute applicationInterface: String; // Description of the network interface
-  port applicationPort: CouplingPort; // Port for coupling with other nodes or components
-  }
+      port inputs: DataFlow[1..*];
+      port output: DataFlow[1];
+      }
+     
+ 
+ }

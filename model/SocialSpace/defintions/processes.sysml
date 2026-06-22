@@ -1,5 +1,5 @@
-package organization::processes {
-  import StandardLibrary::*;
+package processes {
+private import ScalarValues::*;
 
   item def BusinessProcess {
     attribute id: String;

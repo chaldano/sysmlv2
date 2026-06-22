@@ -1,5 +1,5 @@
-package organization::sovereignty {
-  import StandardLibrary::*;
+package sovereignty {
+private import ScalarFunctions::*;
 
   item def Sovereignty;
 
@@ -7,5 +7,6 @@ package organization::sovereignty {
     attribute name: String;
   }
 
-  trace SovereignEntity -> Sovereignty;
+  //trace SovereignEntity -> Sovereignty;
 }
+ 

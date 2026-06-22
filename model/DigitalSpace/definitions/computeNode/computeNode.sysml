@@ -1,4 +1,4 @@
-package 'nodes'{    
+package 'computeNodes'{    
     private import foundations_identity::*;
     private import foundations_datetype::*;
    
@@ -8,8 +8,15 @@ package 'nodes'{
     private import ScalarValues::*;
 
     
+    port def InputPort {
+     ref item indata : DataFlow; // Input data flow to the compute node}
+    }
+    port def OutputPort {
+     ref item outdata : DataFlow; // Output data flow from the compute node
+    }   
+    
     // ComputeNode definition, representing a generic compute node in the digital space
-    part def ComputeNode specializes IdentifiedEntity {
+    abstract part def ComputeNode specializes IdentifiedEntity {
     attribute nodeId: String[1]; // Unique identifier for the compute node
     attribute description: String; // Description of the compute node
     attribute nature: nodeType; // Nature of the compute node (e.g., physical,
@@ -19,9 +26,7 @@ package 'nodes'{
     part firmware: FirmwareUnit; // Firmware unit of the compute node
     part nic: NetworkController; // Network controller unit of the compute node
     part gui: GuiController; // GUI controller unit of the compute node
-    part serial: SerialController; // Serial controller unit of the compute node
-    part cryp: CryptoController; // Crypto controller unit of the compute node
+    //part serial: SerialController; // Serial controller unit of the compute node
+    //part cryp: CryptoController; // Crypto controller unit of the compute node
     }
-
-
-}
+    }

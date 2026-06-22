@@ -1,9 +1,9 @@
 
-package 'coupling' {
+package coupling {
   private import ScalarValues::*; 
   private import structuralUnits::*;
-  private import 'foundations_identity'::*; 
-  private import 'organization-definitions'::*;
+  private import foundations_identity::*; 
+  //private import organization_definitions::*;
 
 abstract port def CouplingPort;
 

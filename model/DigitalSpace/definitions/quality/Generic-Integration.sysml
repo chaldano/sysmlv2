@@ -1,5 +1,5 @@
-package dependability::integration {
-  import StandardLibrary::*;
+package dependabilities {
+ //*  import StandardLibrary::*;
   import dependability::definitions::*;
   import organization::*;
   import organization::trust::*;
@@ -32,5 +32,5 @@ package dependability::integration {
   trace dependability::definitions::Security -> security::definitions::Security;
 
   // System-level linkage
-  trace Dependability -> system::architecture::System;
+  trace Dependability -> system::architecture::System; */
 }
