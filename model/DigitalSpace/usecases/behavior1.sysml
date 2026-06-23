@@ -9,6 +9,10 @@ package behaviorSystem1{
     item def datum2 {
         out item 'item2.1';
     }
+item def datum3{
+    in item 'test';
+    out item 'test2';
+}
 
 action action1 {
     inout par1: datum1;
