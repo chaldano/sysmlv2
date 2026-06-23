@@ -4,11 +4,10 @@ package capabilities {
   private import 'foundations_datetype'::*; 
   private import FunctionModel::*;
  
-
-  port def inputs {
+  port def Cinput {
     in input: DataFlow[1..*]  ;
   }
-  port def output {
+  port def Coutput {
     out output: DataFlow[1]  ;
   }
 
@@ -18,11 +17,11 @@ package capabilities {
     out output : DataFlow[1]; // Output data flow from the function  
   
     // internal functionality of the capability, represented as a behavior
-    part functions : Function[1..*];
+    action functions : SystemFunction[1..*];
     
     //port output: DataFlow;
     constraint {
-      output = functions.result;  
+      output = functions.fresult;  
       }
     }
     
@@ -32,6 +31,5 @@ package capabilities {
       port inputs: DataFlow[1..*];
       port output: DataFlow[1];
       }
-     
- 
+    
  }

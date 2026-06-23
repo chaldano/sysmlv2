@@ -10,7 +10,8 @@ package mobilNodes {
     private import ScalarValues::*;
 
 
-    abstract part def MobilNode specializes ComputeNode {
+
+    //* abstract part def MobilNode specializes ComputeNode {
     attribute mobilNodeId: String[1]; // Unique identifier for the mobile node
     attribute mobilNodeDescription: String; // Description of the mobile node
     attribute mobilNodeNature: nodeType; // Nature of the mobile node (e.g., physical, virtual)
@@ -22,5 +23,8 @@ package mobilNodes {
     part mobilNodeGui: GuiController; // GUI controller unit of the mobile node
     part mobilNodeSerial: SerialController; // Serial controller unit of the mobile node
     part mobilNodeCryp: CryptoController; // Crypto controller unit of the mobile node
-    }
+    } */
+
+    part def AppleNode specializes ComputeNode;
+
 }

@@ -1,4 +1,4 @@
-package 'computeNodes'{    
+package computeNodes {    
     private import foundations_identity::*;
     private import foundations_datetype::*;
    
@@ -7,14 +7,8 @@ package 'computeNodes'{
     private import structuralUnits::*; 
     private import ScalarValues::*;
 
-    
-    port def InputPort {
-     ref item indata : DataFlow; // Input data flow to the compute node}
-    }
-    port def OutputPort {
-     ref item outdata : DataFlow; // Output data flow from the compute node
-    }   
-    
+    part def System specializes IdentifiedEntity;
+
     // ComputeNode definition, representing a generic compute node in the digital space
     abstract part def ComputeNode specializes IdentifiedEntity {
     attribute nodeId: String[1]; // Unique identifier for the compute node

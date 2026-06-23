@@ -4,6 +4,12 @@ package structuralUnits {
     private import coupling::*;
     private import ScalarValues::*;
     
+    enum def CPUFamily{
+        Intel;
+        ARM;
+        A_Serie;
+
+    }
     
     enum def OSFamily { 
         Linux;
@@ -38,7 +44,7 @@ package structuralUnits {
     attribute type : String redefines type; // The type of firmware (e.g., BIOS, UEFI)
     }
     part def CPUUnit specializes NodeUnit {
-    attribute type : String redefines type; // The type of CPU (e.g., x86, ARM)
+    attribute type : CPUFamily redefines type; // The type of CPU (e.g., x86, ARM)
     }   
     part def MemoryUnit specializes NodeUnit {
     attribute type : String redefines type; // The type of memory (e.g., RAM, Flash)
