@@ -1,14 +1,13 @@
 package TrustVault {
     private import foundations_datetype::*;
     private import computeNodes::*;
+    private import mobilNodes::*;
     private import capabilities::*;
     private import coupling::*;
     private import communication_port::*;
     private import structuralUnits::*;
     private import ScalarValues::*;
     private import plattforms::*;
-
-part def AppleNode specializes ComputeNode;
 
 port def PRegistry{
     out psmb: PNodeOutput;
@@ -32,7 +31,10 @@ interface def REG {
 
 
 part IphoneSystem:System{
-ref part aNode: AppleNode;
+ref part aNode: AppleNode{
+    mobilCPU = CPUFamily::A_Serie;
+    mobilOS = OSFamily::RTOS; 
+}
  port registry: PRegistry ;
  port usergui: PGUI; 
  port govcenter: PGovCenter;

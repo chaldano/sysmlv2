@@ -12,9 +12,10 @@ package structuralUnits {
     }
     
     enum def OSFamily { 
-        Linux;
-        Windows;
-        RTOS ;
+        enum Linux;
+        enum Windows;
+        enum RTOS ;
+        enum IOS;
         }
     
     // StructuralUnit definition, representing a generic structural unit in the digital space

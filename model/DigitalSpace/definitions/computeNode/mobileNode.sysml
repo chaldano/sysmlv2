@@ -27,4 +27,5 @@ package mobilNodes {
 
     part def AppleNode specializes ComputeNode;
 
+
 }

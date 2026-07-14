@@ -1,5 +1,7 @@
  package 'foundations_datetype' {
   private import ScalarValues::*;
+  private import 'foundations_identity'::*;
+
     attribute def Date {
         attribute year  : Integer;
         attribute month : Integer;
@@ -31,5 +33,62 @@ item def HTTPResponse {
   item def DataFlow {
     attribute dataType: String; // Type of data being transferred
     attribute size: Integer; // Size of the data being transferred (in bytes)
+    }
+
+  // sense
+  item def observedObject:> IdentifiedEntity{
+    attribute objectDescription: String; // Type of data being transferred
+    }
+  item def observedInformation:> IdentifiedEntity{
+    attribute informationDescription: String; // Type of data being transferred
+    }
+  // transform
+  item def sourceInformation:> IdentifiedEntity{
+    attribute informationDescription: String; // Type of data being transferred
+    }
+  item def transformedInformation:> IdentifiedEntity{
+    attribute informationDescription: String; // Type of data being transferred
+    }
+  // control
+  item def deviationInformation:> IdentifiedEntity{
+    attribute informationDescription: String; // Type of data being transferred
+    }
+  item def controlDecision:> IdentifiedEntity{
+    attribute decisionDescription: String; // Type of data being transferred
+    }
+  item def targetObject:> IdentifiedEntity{
+    attribute objectDescription: String; // Type of data being transferred
+    }
+  item def currentObject:> IdentifiedEntity{
+    attribute objectDescription: String; // Type of data being transferred
+    }
+
+  //execute   
+  item def activitySpecification:> IdentifiedEntity{
+    attribute specificationDescription: String; // Type of data being transferred
+    }
+  item def effectObject:> IdentifiedEntity{
+    attribute stateDescription: String; // Type of data being transferred
+    }
+  //adapt
+  item def targetStructure:> IdentifiedEntity{
+    attribute structureDescription: String; // Type of data being transferred
+    }
+  item def currentStructure:> IdentifiedEntity{
+    attribute structureDescription: String; // Type of data being transferred
+    }
+  item def adaptedStructure:> IdentifiedEntity{
+    attribute structureDescription: String; // Type of data being transferred
+    }  
+ 
+ // Datatypes for capabilities
+ item def IdentityInformation {
+    attribute identityType: String; // Type of identity information (e.g., username, email, biometric data)
+    attribute identityValue: String; // Value of the identity information
+    }
+ item def IdentityStatus  
+  {
+    attribute statusType: String; // Type of identity status (e.g., active, inactive, suspended)
+    attribute statusValue: String; // Value of the identity status
     }
  }
