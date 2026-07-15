@@ -82,10 +82,27 @@ item def HTTPResponse {
     }  
  
  // Datatypes for capabilities
+
+ item def IdentityForm{
+  attribute name: String; // Type of identity form (e.g., login form, registration form)
+  attribute credential: String; // Fields of the identity form (e.g., username,
+ }
+ 
  item def IdentityInformation {
     attribute identityType: String; // Type of identity information (e.g., username, email, biometric data)
     attribute identityValue: String; // Value of the identity information
     }
+
+ // Datatypes for capabilities
+ item def IdentityPair {
+    attribute identity: String; // Type of identity information (e.g., username, email, biometric data)
+    attribute identityPerson: String; // Value of the identity information
+    }
+
+ item def IdentityBindings{
+  ref item IdentityPair[1..*];
+ }
+ 
  item def IdentityStatus  
   {
     attribute statusType: String; // Type of identity status (e.g., active, inactive, suspended)

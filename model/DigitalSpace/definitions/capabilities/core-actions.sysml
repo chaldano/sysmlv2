@@ -1,7 +1,7 @@
 package coreactions {
   private import ScalarValues::*; 
-  private import 'foundations_identity'::*; 
-  private import 'foundations_datetype'::*; 
+  private import foundations_identity::*; 
+  private import foundations_datetype::*; 
   private import FunctionModel::*;
  
   port def Cinput {
@@ -72,5 +72,4 @@ action def CoreAdapt {
       port inputs: DataFlow[1..*];
       port output: DataFlow[1];
       }
-    
  }
