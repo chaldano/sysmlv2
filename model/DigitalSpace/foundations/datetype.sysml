@@ -82,6 +82,9 @@ item def HTTPResponse {
     }  
  
  // Datatypes for capabilities
+ item def SystemState{
+  attribute statevalue: String; // Fields of the identity form (e.g., username,}
+  }
 
  item def IdentityForm{
   attribute name: String; // Type of identity form (e.g., login form, registration form)
