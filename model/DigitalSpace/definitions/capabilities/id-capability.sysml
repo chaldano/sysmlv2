@@ -4,27 +4,27 @@ package idcapabilities {
   private import foundations_datetype::*; 
   private import coreactions::*;
 
-port def PIDin {
-    in input: IdentityForm  ;
-  }
-port def PIDout {
-    out output: IdentityInformation  ;
-  }
+// Input for sense
+item def IdentityForm:> observedObject;
+item def IdentityInformation:> observedInformation;
+
+port def PIDin ;
+port def PIDout ;
 
 part def IdentityCapability specializes IdentifiedEntity {
     attribute description: String;
-    port inID : PIDin{
-      in form: IdentityForm;
-    }
-    port outID : PIDout{
-      out idinf: IdentityStatus;
-    }
-    part sense : CoreSense;
+    port input : PIDin;
+    port output : PIDout;
+
+    action senseID : CoreSense{
+      in redefines input:IdentityForm;
+      out redefines output: IdentityInformation; 
+      }
     //part control : CoreControl;
     //part execute : CoreExecute;
 
-    bind inID.form = sense.inobserve;
-    bind sense.outinfo = outID.idinf;
+bind input = senseID.input;
+    bind senseID.output = output;
    }
 
 }

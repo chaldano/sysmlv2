@@ -11,8 +11,6 @@ package coreactions {
     out output: DataFlow[1]  ;
   }
 
-
-
 abstract action def CoreAction {
     attribute description: String;
     in input : Base::DataValue; // Input data flow to the function
@@ -25,7 +23,7 @@ abstract action def CoreAction {
   // Examples are sensoring, auditing, logging, reading an identity or policy or certificat
     in item redefines input : observedObject[0..*];
     // out outinfo : observedInformation[0..1]; // Output data flow from the function  
-    out item redefines output : Natural; // Output data flow from the function  
+    out item redefines output : String; // Output data flow from the function  
 
   }
  
